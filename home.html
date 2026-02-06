@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html class="light" lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ASS Realizando Sonhos - Transformando Vidas em Anapurus</title>
+<link href="favicon.ico" rel="icon"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700;800;900&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#00b1d7",
+                        "secondary": "#175392",
+                        "background-light": "#f6f8f8",
+                        "background-dark": "#0a1921",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+    <style type="text/tailwindcss">
+        body { font-family: 'Lexend', sans-serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        @media (max-width: 768px) {
+            .desktop-nav { display: none; }
+            .mobile-nav { display: none; }
+            .nav-open .mobile-nav { display: block; }
+            .mobile-hide { display: none; }
+            .mobile-nav {
+                background: rgba(255, 255, 255, 0.98);
+                border-radius: 0 0 16px 16px;
+                padding: 16px;
+                max-width: 320px;
+                width: min(320px, 100%);
+                position: fixed;
+                top: 64px;
+                right: 0;
+                height: calc(100vh - 64px);
+                overflow-y: auto;
+                box-shadow: 0 12px 30px rgba(15, 23, 42, 0.12);
+            }
+            .mobile-nav-content { display: flex; flex-direction: column; gap: 16px; min-height: 60vh; }
+            .mobile-nav-links { display: flex; flex-direction: column; gap: 14px; }
+            .mobile-nav-actions { margin-top: auto; display: flex; flex-direction: column; gap: 10px; }
+        }
+        @media (min-width: 769px) {
+            .mobile-nav-toggle { display: none; }
+            .mobile-nav { display: none; }
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-white transition-colors duration-300">
+<header class="sticky top-0 z-50 w-full border-b border-slate-200/60 dark:border-slate-800/60 bg-white/80 dark:bg-background-dark/80 backdrop-blur-md px-4 md:px-20 lg:px-40 py-3" data-mobile-nav-wrapper>
+<div class="flex items-center justify-between gap-8">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-3">
+<div class="size-10 bg-white rounded-lg flex items-center justify-center shadow-md shadow-secondary/20">
+<img alt="Logo ASS Realizando Sonhos" class="size-8 object-contain" src="logo.png"/>
+</div>
+<div class="flex flex-col">
+<h2 class="text-sm font-bold leading-none tracking-tight text-secondary dark:text-white">ASS Realizando Sonhos</h2>
+<span class="text-[10px] text-primary font-medium uppercase tracking-wider">Apoie uma causa, realize um sonho.</span>
+</div>
+</div>
+<nav class="desktop-nav hidden md:flex items-center gap-6">
+<a class="text-sm font-medium hover:text-primary transition-colors text-secondary" href="home.html">Início</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="vitrine/index.html">Vitrine de Cursos</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="doacao.html">Doações</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="transparencia.html">Transparência</a>
+</nav>
+</div>
+<div class="flex items-center gap-4 flex-1 justify-end">
+<button class="mobile-nav-toggle md:hidden text-secondary" type="button" data-mobile-toggle>
+<span class="material-symbols-outlined">menu</span>
+</button>
+<a class="mobile-hide bg-white text-secondary font-bold text-sm px-5 py-2 rounded-lg border border-slate-200 hover:border-primary hover:text-primary transition-all flex items-center gap-2" href="login.html">
+<span class="material-symbols-outlined text-sm">person</span>
+                    Login
+                </a>
+<a class="mobile-hide bg-primary text-white px-5 py-2.5 rounded-lg text-sm font-bold shadow-md shadow-primary/20 hover:shadow-primary/40 hover:-translate-y-0.5 transition-all flex items-center gap-2" href="doacao.html">
+<span class="material-symbols-outlined text-sm">volunteer_activism</span>
+                    Doe agora
+                </a>
+</div>
+</div>
+<nav class="mobile-nav md:hidden mt-3 border-t border-slate-200/60 dark:border-slate-800/60">
+<div class="mobile-nav-content text-sm">
+<div class="mobile-nav-links">
+<a class="font-medium text-secondary" href="home.html">Início</a>
+<a class="font-medium" href="vitrine/index.html">Vitrine de Cursos</a>
+<a class="font-medium" href="doacao.html">Doações</a>
+<a class="font-medium" href="transparencia.html">Transparência</a>
+</div>
+<div class="mobile-nav-actions">
+<a class="bg-white text-secondary font-bold text-sm px-4 py-2 rounded-lg border border-slate-200 hover:border-primary hover:text-primary transition-all flex items-center gap-2" href="login.html">
+<span class="material-symbols-outlined text-sm">person</span>
+                    Login
+                </a>
+<a class="bg-primary text-white px-4 py-2 rounded-lg text-sm font-bold shadow-md shadow-primary/20 hover:shadow-primary/40 transition-all flex items-center gap-2" href="doacao.html">
+<span class="material-symbols-outlined text-sm">volunteer_activism</span>
+                    Doe agora
+                </a>
+</div>
+</div>
+</nav>
+</header>
+<main>
+<section class="relative overflow-hidden pt-16 pb-24 lg:pt-32 lg:pb-40">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+<div class="grid lg:grid-cols-2 gap-12 items-center">
+<div class="max-w-2xl">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary/10 text-secondary text-xs font-bold uppercase tracking-wider mb-6">
+<span class="material-symbols-outlined text-sm">auto_awesome</span>
+                            Impactando Anapurus
+                        </div>
+<h1 class="text-5xl lg:text-7xl font-extrabold tracking-tight leading-[1.1] mb-6 dark:text-white text-secondary">
+                            Transformando realidades através da <span class="text-primary">educação</span>.
+                        </h1>
+<p class="text-lg lg:text-xl text-slate-600 dark:text-slate-400 mb-10 leading-relaxed">
+                            Apoie uma causa, realize um sonho. Junte-se a nós para impactar vidas no Maranhão através de inclusão digital e formação profissional.
+                        </p>
+<div class="flex flex-col sm:flex-row gap-4">
+<button class="px-8 py-4 bg-primary text-white font-bold rounded-xl shadow-xl shadow-primary/20 hover:bg-primary/90 transition-all flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">favorite</span>
+                                Quero ajudar
+                            </button>
+<button class="px-8 py-4 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 font-bold rounded-xl text-secondary hover:bg-slate-50 dark:hover:bg-slate-700 transition-all flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">school</span>
+                                Ver cursos
+                            </button>
+</div>
+</div>
+<div class="relative">
+<div class="aspect-square rounded-3xl overflow-hidden shadow-2xl rotate-3 hover:rotate-0 transition-transform duration-500 bg-slate-200 dark:bg-slate-800 border-4 border-white dark:border-slate-700">
+<img alt="Foto do projeto social" class="w-full h-full object-cover" src="foto.png"/>
+</div>
+<div class="absolute -bottom-6 -left-6 bg-white dark:bg-slate-800 p-6 rounded-2xl shadow-xl max-w-[240px] border border-slate-100 dark:border-slate-700">
+<div class="flex items-center gap-4 mb-3">
+<div class="size-12 rounded-full bg-primary/20 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">trending_up</span>
+</div>
+<div>
+<p class="text-xs text-slate-500 font-medium">Crescimento</p>
+<p class="text-xl font-bold text-secondary">+150%</p>
+</div>
+</div>
+<p class="text-xs text-slate-600 dark:text-slate-400">Aumento no número de alunos formados este ano em Anapurus.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="absolute top-0 right-0 -z-10 w-[600px] h-[600px] bg-primary/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
+</section>
+<section class="py-12 bg-white dark:bg-background-dark/50 border-y border-slate-100 dark:border-slate-800">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+<div class="text-center">
+<h3 class="text-4xl font-extrabold text-secondary mb-1">500+</h3>
+<p class="text-sm font-medium text-slate-500 uppercase tracking-widest">Alunos</p>
+</div>
+<div class="text-center border-l border-slate-100 dark:border-slate-800">
+<h3 class="text-4xl font-extrabold text-secondary mb-1">12</h3>
+<p class="text-sm font-medium text-slate-500 uppercase tracking-widest">Cursos Grátis</p>
+</div>
+<div class="text-center border-l border-slate-100 dark:border-slate-800">
+<h3 class="text-4xl font-extrabold text-secondary mb-1">10k+</h3>
+<p class="text-sm font-medium text-slate-500 uppercase tracking-widest">Refeições</p>
+</div>
+<div class="text-center border-l border-slate-100 dark:border-slate-800">
+<h3 class="text-4xl font-extrabold text-secondary mb-1">R$ 150k</h3>
+<p class="text-sm font-medium text-slate-500 uppercase tracking-widest">Investidos</p>
+</div>
+</div>
+</div>
+</section>
+<section class="py-24 bg-background-light dark:bg-background-dark">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid lg:grid-cols-2 gap-16 items-center">
+<div class="order-2 lg:order-1 relative">
+<div class="bg-white dark:bg-slate-900 p-4 rounded-3xl shadow-2xl border border-slate-200 dark:border-slate-800">
+<div class="aspect-video w-full rounded-2xl overflow-hidden relative bg-slate-100 dark:bg-slate-800 group" data-location="Anapurus, Maranhão">
+<img alt="Mapa geográfico estilizado destacando a região do Maranhão" class="w-full h-full object-cover opacity-60" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCTBufC-EmFHCjV9LuaOygjN5PKHVdySRleA72tRlHim5iNsP3cnuNbhD1JTrEtIKGDB_7OKygYaZ7FtBpLquX2smqyiyuSIoP8Y_HCZhGUuS4zIyEbFoW0oyyG-vKIhTl2F3oTwbxXwBI51PzUAEVK6OMBeixiIn-gtUDMlKpKR1RgsAB3Ov3oG0P1Zh8YeE2reT0WH4-Q37dEtnS92n9Lh44detVtZvCYKPjiqgpJ6PCRR_nSqA_vOGIx4Bw6r87ehSvEyKgir_rs"/>
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="relative">
+<span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-secondary opacity-75"></span>
+<div class="relative size-6 bg-secondary rounded-full border-4 border-white dark:border-slate-900 shadow-lg"></div>
+<div class="absolute top-8 left-1/2 -translate-x-1/2 bg-white dark:bg-slate-800 px-4 py-2 rounded-lg shadow-xl whitespace-nowrap border border-slate-100 dark:border-slate-700">
+<p class="text-xs font-bold text-secondary">Nossa Sede: Anapurus, MA</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="order-1 lg:order-2">
+<h2 class="text-3xl lg:text-5xl font-extrabold tracking-tight mb-8 text-secondary">Nossa Missão em <span class="text-primary italic">Anapurus</span></h2>
+<div class="space-y-6">
+<p class="text-lg text-slate-600 dark:text-slate-400 leading-relaxed">
+                                A <b>ASS Realizando Sonhos</b> nasceu no coração do Maranhão com o propósito de reduzir o abismo educacional. Acreditamos que a transparência e o apoio humanitário são os pilares de toda transformação real.
+                            </p>
+<div class="flex items-start gap-4">
+<div class="mt-1 size-10 rounded-lg bg-secondary/10 flex-shrink-0 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined">verified_user</span>
+</div>
+<div>
+<h4 class="font-bold text-lg mb-1 text-secondary">Transparência Total</h4>
+<p class="text-slate-500">Cada centavo doado é registrado e aberto ao público através do nosso portal de prestação de contas.</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<div class="mt-1 size-10 rounded-lg bg-secondary/10 flex-shrink-0 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined">groups</span>
+</div>
+<div>
+<h4 class="font-bold text-lg mb-1 text-secondary">Impacto Local</h4>
+<p class="text-slate-500">Focamos no desenvolvimento humano local, criando oportunidades reais para as famílias da região.</p>
+</div>
+</div>
+</div>
+<button class="mt-10 text-secondary font-bold flex items-center gap-2 group hover:text-primary transition-colors">
+                            Conheça nossa história completa
+                            <span class="material-symbols-outlined transition-transform group-hover:translate-x-1">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<section class="py-24 bg-white dark:bg-background-dark/30">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center mb-16">
+<h2 class="text-3xl lg:text-4xl font-extrabold mb-4 text-secondary">Vozes de quem faz parte</h2>
+<p class="text-slate-500 max-w-2xl mx-auto">Histórias reais de pessoas que tiveram suas trajetórias transformadas pelos nossos projetos e doadores.</p>
+</div>
+<div class="grid md:grid-cols-3 gap-8">
+<div class="p-8 rounded-2xl bg-background-light dark:bg-slate-900 border border-slate-100 dark:border-slate-800">
+<div class="flex gap-1 text-primary mb-4">
+<span class="material-symbols-outlined">star</span><span class="material-symbols-outlined">star</span><span class="material-symbols-outlined">star</span><span class="material-symbols-outlined">star</span><span class="material-symbols-outlined">star</span>
+</div>
+<p class="text-slate-600 dark:text-slate-400 italic mb-8">"O curso de informática básica mudou minha vida. Hoje trabalho na prefeitura graças à ASS Realizando Sonhos."</p>
+<div class="flex items-center gap-4">
+<div class="size-12 rounded-full overflow-hidden bg-slate-200 border-2 border-primary">
+<img alt="Rosto de um beneficiário do projeto sorridente" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDgRjVRMmxZpWRxIig59AnnwI3zlhOvQybXv4tV9WWOwRlciFDAlEdgR3eFymXgAnBOfvmwTw6vL6R540AJR3kt77s5A2TBkUOGpAH1BXZqhImuNFtCBUZyD9GIAekgWC6GcdIJtonQFrp0hyUlYXCwpLh4fjP95Dt4BPFOG6eMf_cxoDzXxqWrCW7p0PwBIAaCpcugXKeooSte1nkFyoWCyAgC4GdXpxxrJ_9vCN0H_XEh57IvTVTqxooNcMDWqkSTre3WgN7T3OOd"/>
+</div>
+<div>
+<h5 class="font-bold text-secondary dark:text-white">Ricardo Silva</h5>
+<p class="text-xs text-slate-500">Ex-aluno do curso de TI</p>
+</div>
+</div>
+</div>
+<div class="p-8 rounded-2xl bg-background-light dark:bg-slate-900 border border-slate-100 dark:border-slate-800">
+<div class="flex gap-1 text-primary mb-4">
+<span class="material-symbols-outlined">star</span><span class="material-symbols-outlined">star</span><span class="material-symbols-outlined">star</span><span class="material-symbols-outlined">star</span><span class="material-symbols-outlined">star</span>
+</div>
+<p class="text-slate-600 dark:text-slate-400 italic mb-8">"Doar para a ONG é fácil porque vemos o resultado acontecer. A transparência deles me dá muita confiança."</p>
+<div class="flex items-center gap-4">
+<div class="size-12 rounded-full overflow-hidden bg-slate-200 border-2 border-primary">
+<img alt="Rosto de uma doadora de projetos sociais" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDKim0DNnfa4TMoafO47qCzmA4VcXQ9r81VteeugbEHKTNNEPDkNfZkwbyI2OSRa3gXFtLo65yVjIgKqfX8F3yA-uz5tJ-MkVYLa8sYa4sTicIqLlwa4dLYt_uUnT9a0_DzTxJxON-FBJJD-81bgDMuALSUSeZng0rYZxxv3Wd4JIDp8b2FYL7OKuPBPguH6ntRjm6HMZ0rtLSx1rxhKVK6RGvwZiP-xnfRV-_T3CpKoOObNIzqjQba4hR-JXrW7rWpkSPv7k13Csrj"/>
+</div>
+<div>
+<h5 class="font-bold text-secondary dark:text-white">Beatriz Gomes</h5>
+<p class="text-xs text-slate-500">Doadora Recorrente</p>
+</div>
+</div>
+</div>
+<div class="p-8 rounded-2xl bg-background-light dark:bg-slate-900 border border-slate-100 dark:border-slate-800">
+<div class="flex gap-1 text-primary mb-4">
+<span class="material-symbols-outlined">star</span><span class="material-symbols-outlined">star</span><span class="material-symbols-outlined">star</span><span class="material-symbols-outlined">star</span><span class="material-symbols-outlined">star</span>
+</div>
+<p class="text-slate-600 dark:text-slate-400 italic mb-8">"Meus filhos aprenderam muito no projeto de música. Eles têm mais disciplina e sonhos agora."</p>
+<div class="flex items-center gap-4">
+<div class="size-12 rounded-full overflow-hidden bg-slate-200 border-2 border-primary">
+<img alt="Mãe de aluno sorridente em depoimento" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDXSck1L5-9hLpJK1Rk6-zbuXPqMyMz6Z8L7atZ2zaMtwIg7aYbJstnvDqZlAi-sJvX8bgQE4roUg33_XSRcza3Fak8xLXL10UqYf62eb1D69Ri1Q8YaQNzgqXDnuwxII6coqKUghk8gTJSzM9PIGanKCVQo7hRmsbyV4-CJiSwFrgtYbVIKMHZCUznoB17vtllWI5SjoD4TMBOemBb31Dr5O1m3yvTkZj1cSMm7aBG_6p_GHS51S0Ynsnt7kD3t0sIk-aqscjnih7R"/>
+</div>
+<div>
+<h5 class="font-bold text-secondary dark:text-white">Maria José</h5>
+<p class="text-xs text-slate-500">Mãe de beneficiários</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-24">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="relative overflow-hidden bg-secondary rounded-[3rem] p-12 lg:p-24 text-center">
+<div class="relative z-10 max-w-3xl mx-auto">
+<h2 class="text-4xl lg:text-6xl font-black text-white mb-8">Pronto para ser parte da mudança?</h2>
+<p class="text-white/90 text-lg lg:text-xl font-medium mb-12">Sua contribuição, por menor que seja, ajuda a manter nossos cursos e projetos ativos.</p>
+<div class="flex flex-wrap justify-center gap-4">
+<button class="bg-primary text-white px-10 py-5 rounded-2xl font-bold text-lg hover:brightness-110 transition-all shadow-2xl">
+                                Doar via PIX agora
+                            </button>
+<button class="bg-white/20 backdrop-blur-md text-white border border-white/30 px-10 py-5 rounded-2xl font-bold text-lg hover:bg-white/30 transition-all">
+                                Quero ser voluntário
+                            </button>
+</div>
+</div>
+<div class="absolute top-0 left-0 -translate-x-1/2 -translate-y-1/2 size-96 bg-white/10 rounded-full blur-3xl"></div>
+<div class="absolute bottom-0 right-0 translate-x-1/2 translate-y-1/2 size-96 bg-background-dark/10 rounded-full blur-3xl"></div>
+</div>
+</div>
+</section>
+</main>
+<footer class="bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 pt-20 pb-10">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+<div class="space-y-6">
+<div class="flex items-center gap-3">
+<div class="size-8 bg-secondary rounded-lg flex items-center justify-center text-white">
+<span class="material-symbols-outlined text-sm font-bold">cloud</span>
+</div>
+<span class="text-lg font-bold text-secondary dark:text-white">ASS Realizando Sonhos</span>
+</div>
+<p class="text-slate-500 text-sm leading-relaxed">
+                        Apoie uma causa, realize um sonho. Transformando realidades em Anapurus através da educação e transparência.
+                    </p>
+<div class="flex gap-4">
+<a class="size-10 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center hover:bg-secondary/20 hover:text-secondary transition-colors" href="#">
+<span class="material-symbols-outlined text-lg">public</span>
+</a>
+<a class="size-10 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center hover:bg-secondary/20 hover:text-secondary transition-colors" href="#">
+<span class="material-symbols-outlined text-lg">mail</span>
+</a>
+</div>
+</div>
+<div>
+<h4 class="font-bold mb-6 text-secondary dark:text-white">Navegação</h4>
+<ul class="space-y-4 text-sm text-slate-500">
+<li><a class="hover:text-primary transition-colors" href="#">Vitrine de Cursos</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Transparência</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Blog &amp; Notícias</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Sobre Nós</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold mb-6 text-secondary dark:text-white">Projetos</h4>
+<ul class="space-y-4 text-sm text-slate-500">
+<li><a class="hover:text-primary transition-colors" href="#">Inclusão Digital</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Musicalização</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Horta Comunitária</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Apoio Familiar</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold mb-6 text-secondary dark:text-white">Institucional</h4>
+<ul class="space-y-4 text-sm text-slate-500">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-sm text-primary">location_on</span>
+                            Rua da Esperança, 123, Centro - Anapurus, MA
+                        </li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-sm text-primary">call</span>
+                            (98) 9999-9999
+                        </li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-sm text-primary">badge</span>
+                            CNPJ: 64.432.642/0001-42
+                        </li>
+</ul>
+</div>
+</div>
+<div class="pt-8 border-t border-slate-100 dark:border-slate-800 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-400">
+<p>© 2024 ASS Realizando Sonhos - Anapurus. Todos os direitos reservados.</p>
+<div class="flex gap-6">
+<a class="hover:text-secondary" href="#">Termos de Uso</a>
+<a class="hover:text-secondary" href="#">Política de Privacidade</a>
+</div>
+</div>
+</div>
+</footer>
+
+<script>
+        document.querySelectorAll("[data-mobile-nav-wrapper]").forEach((header) => {
+            const toggle = header.querySelector("[data-mobile-toggle]");
+            if (!toggle) return;
+            toggle.addEventListener("click", () => {
+                header.classList.toggle("nav-open");
+            });
+        });
+    </script>
+
+</body></html>

@@ -1,0 +1,1511 @@
+<!DOCTYPE html>
+<html class="light" lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Vitrine de Cursos | ASS Realizando Sonhos</title>
+<link href="../favicon.ico" rel="icon"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#175392",
+                        "secondary": "#00b1d7",
+                        "primary-dark": "#0f3d6b",
+                        "background-light": "#f8fafc",
+                        "background-dark": "#0f172a",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.375rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "2xl": "1rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style type="text/tailwindcss">
+        body { font-family: 'Lexend', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        :root {
+            --primary-color: #175392;
+            --secondary-color: #00b1d7;
+        }
+        dialog::backdrop {
+            background: rgba(15, 23, 42, 0.6);
+            backdrop-filter: blur(6px);
+        }
+        .course-tag {
+            display: inline-block;
+            max-width: 140px;
+            white-space: normal;
+            overflow-wrap: anywhere;
+            text-align: center;
+            line-height: 1.2;
+        }
+        @media (max-width: 768px) {
+            .desktop-nav { display: none; }
+            .mobile-nav { display: none; }
+            .nav-open .mobile-nav { display: block; }
+            .mobile-hide { display: none; }
+            .mobile-nav {
+                background: rgba(255, 255, 255, 0.98);
+                border-radius: 0 0 16px 16px;
+                padding: 16px;
+                max-width: 320px;
+                width: min(320px, 100%);
+                position: fixed;
+                top: 64px;
+                right: 0;
+                height: calc(100vh - 64px);
+                overflow-y: auto;
+                box-shadow: 0 12px 30px rgba(15, 23, 42, 0.12);
+            }
+            .mobile-nav-content { display: flex; flex-direction: column; gap: 16px; min-height: 60vh; }
+            .mobile-nav-links { display: flex; flex-direction: column; gap: 14px; }
+            .mobile-nav-actions { margin-top: auto; display: flex; flex-direction: column; gap: 10px; }
+        }
+        @media (min-width: 769px) {
+            .mobile-nav-toggle { display: none; }
+            .mobile-nav { display: none; }
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-white transition-colors duration-200">
+<div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+<header class="sticky top-0 z-50 w-full border-b border-slate-200 dark:border-slate-800 bg-white/80 dark:bg-background-dark/80 backdrop-blur-md px-4 md:px-20 lg:px-40 py-3" data-mobile-nav-wrapper>
+<div class="flex items-center justify-between gap-8">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-3">
+<div class="size-10 bg-white rounded-lg flex items-center justify-center shadow-md shadow-primary/10">
+<img alt="Logo ASS Realizando Sonhos" class="size-8 object-contain" src="../logo.png"/>
+</div>
+<div class="flex flex-col">
+<h2 class="text-sm font-bold leading-none tracking-tight">ASS Realizando Sonhos</h2>
+<span class="text-[10px] text-secondary font-medium uppercase tracking-wider">Apoie uma causa, realize um sonho.</span>
+</div>
+</div>
+<nav class="desktop-nav hidden md:flex items-center gap-6">
+<a class="text-sm font-medium hover:text-secondary transition-colors text-primary" href="../home.html">Início</a>
+<a class="text-sm font-medium hover:text-slate-600 dark:hover:text-slate-300 transition-colors" href="index.html">Vitrine de Cursos</a>
+<a class="text-sm font-medium hover:text-slate-600 dark:hover:text-slate-300 transition-colors" href="../doacao.html">Doações</a>
+<a class="text-sm font-medium hover:text-slate-600 dark:hover:text-slate-300 transition-colors" href="../transparencia.html">Transparência</a>
+</nav>
+</div>
+<div class="flex items-center gap-4 flex-1 justify-end">
+<button class="mobile-nav-toggle md:hidden text-primary" type="button" data-mobile-toggle>
+<span class="material-symbols-outlined">menu</span>
+</button>
+<button class="mobile-hide bg-white text-primary font-bold text-sm px-5 py-2 rounded-lg border border-slate-200 hover:border-secondary hover:text-secondary transition-all flex items-center gap-2" id="open-login-modal" type="button">
+<span class="material-symbols-outlined text-sm">person</span>
+                    Login
+                </button>
+<a class="mobile-hide bg-primary text-white font-bold text-sm px-5 py-2 rounded-lg hover:bg-primary-dark transition-all flex items-center gap-2 shadow-sm shadow-primary/20" href="../doacao.html">
+<span class="material-symbols-outlined text-sm">volunteer_activism</span>
+                    Doar
+                </a>
+</div>
+</div>
+<nav class="mobile-nav md:hidden mt-3 border-t border-slate-200/60 dark:border-slate-800/60">
+<div class="mobile-nav-content text-sm">
+<div class="mobile-nav-links">
+<a class="font-medium text-primary" href="../home.html">Início</a>
+<a class="font-medium" href="index.html">Vitrine de Cursos</a>
+<a class="font-medium" href="../doacao.html">Doações</a>
+<a class="font-medium" href="../transparencia.html">Transparência</a>
+</div>
+<div class="mobile-nav-actions">
+<button class="bg-white text-primary font-bold text-sm px-4 py-2 rounded-lg border border-slate-200 hover:border-secondary hover:text-secondary transition-all flex items-center gap-2" type="button" id="open-login-modal-mobile">
+<span class="material-symbols-outlined text-sm">person</span>
+                Login
+            </button>
+<a class="bg-primary text-white font-bold text-sm px-4 py-2 rounded-lg hover:bg-primary-dark transition-all flex items-center gap-2 shadow-sm shadow-primary/20" href="../doacao.html">
+<span class="material-symbols-outlined text-sm">volunteer_activism</span>
+                Doar
+            </a>
+</div>
+</div>
+</nav>
+</header>
+<main class="flex-1 px-4 md:px-20 lg:px-40 py-10">
+<div class="flex flex-col md:flex-row justify-between items-end gap-6 mb-12">
+<div class="max-w-2xl">
+<div class="flex items-center gap-2 mb-2">
+<span class="bg-secondary/10 text-secondary font-bold text-[10px] uppercase tracking-wider px-2 py-0.5 rounded">Plataforma EAD</span>
+</div>
+<h1 class="text-4xl md:text-5xl font-black tracking-tight mb-4">Vitrine de Cursos</h1>
+<p class="text-slate-500 dark:text-slate-400 text-lg max-w-xl">Aprenda com especialistas e transforme realidades. Todo o valor arrecadado é revertido para os projetos da <span class="text-primary font-semibold">ASS Realizando Sonhos</span>.</p>
+</div>
+<div class="flex flex-col items-end gap-3 w-full md:w-auto">
+<div class="w-full md:w-80 relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400">search</span>
+<input class="w-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg py-2.5 pl-10 pr-4 text-sm focus:ring-2 focus:ring-secondary outline-none" placeholder="Buscar cursos..."/>
+</div>
+<button class="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 font-bold text-sm px-6 py-3 rounded-xl shadow-sm hover:shadow-md hover:border-secondary/30 transition-all flex items-center gap-2 group">
+<span class="material-symbols-outlined text-secondary group-hover:scale-110 transition-transform">history_edu</span>
+                Meus Certificados
+            </button>
+</div>
+</div>
+<div class="flex flex-col lg:flex-row gap-10">
+<aside class="w-full lg:w-64 space-y-8">
+<div>
+<h4 class="font-bold text-sm uppercase tracking-widest text-primary mb-4">Áreas de Atuação</h4>
+<div class="space-y-3">
+<label class="flex items-center gap-3 cursor-pointer group">
+<input checked="" class="rounded text-secondary focus:ring-secondary bg-transparent border-slate-300" type="checkbox"/>
+<span class="text-sm group-hover:text-secondary transition-colors text-secondary font-medium">Todos os Cursos</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="rounded text-secondary focus:ring-secondary bg-transparent border-slate-300" type="checkbox"/>
+<span class="text-sm group-hover:text-secondary transition-colors">Meio Ambiente</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="rounded text-secondary focus:ring-secondary bg-transparent border-slate-300" type="checkbox"/>
+<span class="text-sm group-hover:text-secondary transition-colors">Direitos Humanos</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="rounded text-secondary focus:ring-secondary bg-transparent border-slate-300" type="checkbox"/>
+<span class="text-sm group-hover:text-secondary transition-colors">Educação</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="rounded text-secondary focus:ring-secondary bg-transparent border-slate-300" type="checkbox"/>
+<span class="text-sm group-hover:text-secondary transition-colors">Saúde</span>
+</label>
+</div>
+</div>
+<div>
+<h4 class="font-bold text-sm uppercase tracking-widest text-primary mb-4">Nível</h4>
+<div class="flex flex-wrap gap-2">
+<button class="px-3 py-1.5 rounded-lg bg-secondary text-white border border-secondary text-xs font-medium hover:bg-secondary/90 transition-all">Iniciante</button>
+<button class="px-3 py-1.5 rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-xs font-medium hover:border-secondary hover:text-secondary transition-all">Intermediário</button>
+<button class="px-3 py-1.5 rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-xs font-medium hover:border-secondary hover:text-secondary transition-all">Avançado</button>
+</div>
+</div>
+<div>
+<h4 class="font-bold text-sm uppercase tracking-widest text-primary mb-4">Tipo de Ingresso</h4>
+<div class="space-y-3">
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="text-secondary focus:ring-secondary bg-transparent border-slate-300" name="type" type="radio"/>
+<span class="text-sm group-hover:text-secondary transition-colors">Gratuito</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="text-secondary focus:ring-secondary bg-transparent border-slate-300" name="type" type="radio"/>
+<span class="text-sm group-hover:text-secondary transition-colors">Sugestão de Doação</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="text-secondary focus:ring-secondary bg-transparent border-slate-300" name="type" type="radio"/>
+<span class="text-sm group-hover:text-secondary transition-colors">Pago</span>
+</label>
+</div>
+</div>
+<div class="bg-primary/5 rounded-xl p-5 border border-primary/20">
+<div class="flex items-center gap-2 mb-3">
+<span class="material-symbols-outlined text-secondary text-xl">favorite</span>
+<span class="font-bold text-sm text-primary">Nosso Impacto</span>
+</div>
+<p class="text-2xl font-black text-secondary leading-none">12.4k+</p>
+<p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Alunos capacitados este ano.</p>
+<div class="mt-4 pt-4 border-t border-primary/10">
+<p class="text-2xl font-black text-primary leading-none">R$ 85k</p>
+<p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Arrecadados para projetos locais.</p>
+</div>
+</div>
+</aside>
+<div class="flex-1">
+<div class="flex justify-between items-center mb-6">
+<p class="text-sm font-medium text-slate-500" id="courses-count">Mostrando 90 cursos</p>
+<div class="flex items-center gap-2">
+<span class="text-sm text-slate-500">Ordenar por:</span>
+<select class="bg-transparent border-none text-sm font-bold focus:ring-0 cursor-pointer text-primary dark:text-slate-300">
+<option>Mais Recentes</option>
+<option>Popularidade</option>
+<option>Menor Valor</option>
+</select>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6" id="courses-grid">
+<article class="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 p-5">
+<div class="flex items-start justify-between gap-3">
+<h3 class="font-bold text-base text-primary">AGRICULTURA ORGÂNICA</h3>
+<span class="text-[10px] font-bold uppercase tracking-wider text-secondary bg-secondary/10 px-2 py-1 rounded">AGRICULTURA</span>
+</div>
+<div class="mt-3 flex flex-wrap gap-2 text-xs text-slate-600 dark:text-slate-300">
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Carga: 24h</span>
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Vagas: 15</span>
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Idade: 18+</span>
+</div>
+</article>
+<article class="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 p-5">
+<div class="flex items-start justify-between gap-3">
+<h3 class="font-bold text-base text-primary">CULTIVO DE ESPÉCIES FRUTÍFERAS (BANANA)</h3>
+<span class="text-[10px] font-bold uppercase tracking-wider text-secondary bg-secondary/10 px-2 py-1 rounded">AGRICULTURA</span>
+</div>
+<div class="mt-3 flex flex-wrap gap-2 text-xs text-slate-600 dark:text-slate-300">
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Carga: 24h</span>
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Vagas: 15</span>
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Idade: 18+</span>
+</div>
+</article>
+<article class="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 p-5">
+<div class="flex items-start justify-between gap-3">
+<h3 class="font-bold text-base text-primary">CULTIVO DE ESPÉCIES FRUTÍFERAS (MAMÃO)</h3>
+<span class="text-[10px] font-bold uppercase tracking-wider text-secondary bg-secondary/10 px-2 py-1 rounded">AGRICULTURA</span>
+</div>
+<div class="mt-3 flex flex-wrap gap-2 text-xs text-slate-600 dark:text-slate-300">
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Carga: 24h</span>
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Vagas: 15</span>
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Idade: 18+</span>
+</div>
+</article>
+<article class="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 p-5">
+<div class="flex items-start justify-between gap-3">
+<h3 class="font-bold text-base text-primary">CULTIVO DE ESPÉCIES FRUTÍFERAS RASTEIRAS (ABACAXI)</h3>
+<span class="text-[10px] font-bold uppercase tracking-wider text-secondary bg-secondary/10 px-2 py-1 rounded">AGRICULTURA</span>
+</div>
+<div class="mt-3 flex flex-wrap gap-2 text-xs text-slate-600 dark:text-slate-300">
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Carga: 24h</span>
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Vagas: 15</span>
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Idade: 18+</span>
+</div>
+</article>
+<article class="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 p-5">
+<div class="flex items-start justify-between gap-3">
+<h3 class="font-bold text-base text-primary">CULTIVO DE HORTALIÇAS FOLHOSAS</h3>
+<span class="text-[10px] font-bold uppercase tracking-wider text-secondary bg-secondary/10 px-2 py-1 rounded">AGRICULTURA</span>
+</div>
+<div class="mt-3 flex flex-wrap gap-2 text-xs text-slate-600 dark:text-slate-300">
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Carga: 24h</span>
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Vagas: 15</span>
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Idade: 18+</span>
+</div>
+</article>
+<article class="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 p-5">
+<div class="flex items-start justify-between gap-3">
+<h3 class="font-bold text-base text-primary">CULTIVO DE OLERÍCULAS DE FRUTOS E SEMENTES</h3>
+<span class="text-[10px] font-bold uppercase tracking-wider text-secondary bg-secondary/10 px-2 py-1 rounded">AGRICULTURA</span>
+</div>
+<div class="mt-3 flex flex-wrap gap-2 text-xs text-slate-600 dark:text-slate-300">
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Carga: 24h</span>
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Vagas: 15</span>
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Idade: 18+</span>
+</div>
+</article>
+<article class="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 p-5">
+<div class="flex items-start justify-between gap-3">
+<h3 class="font-bold text-base text-primary">CULTIVO DE OLERÍCULAS DE RAÍZES, BULBOS E TUBÉRCULOS</h3>
+<span class="text-[10px] font-bold uppercase tracking-wider text-secondary bg-secondary/10 px-2 py-1 rounded">AGRICULTURA</span>
+</div>
+<div class="mt-3 flex flex-wrap gap-2 text-xs text-slate-600 dark:text-slate-300">
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Carga: 24h</span>
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Vagas: 15</span>
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Idade: 18+</span>
+</div>
+</article>
+<article class="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 p-5">
+<div class="flex items-start justify-between gap-3">
+<h3 class="font-bold text-base text-primary">CULTIVO DE PLANTAS AGROALIMENTARES - MANDIOCA</h3>
+<span class="text-[10px] font-bold uppercase tracking-wider text-secondary bg-secondary/10 px-2 py-1 rounded">AGRICULTURA</span>
+</div>
+<div class="mt-3 flex flex-wrap gap-2 text-xs text-slate-600 dark:text-slate-300">
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Carga: 24h</span>
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Vagas: 15</span>
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Idade: 18+</span>
+</div>
+</article>
+<article class="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 p-5">
+<div class="flex items-start justify-between gap-3">
+<h3 class="font-bold text-base text-primary">CULTIVO DE PLANTAS AGROALIMENTARES - MILHO</h3>
+<span class="text-[10px] font-bold uppercase tracking-wider text-secondary bg-secondary/10 px-2 py-1 rounded">AGRICULTURA</span>
+</div>
+<div class="mt-3 flex flex-wrap gap-2 text-xs text-slate-600 dark:text-slate-300">
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Carga: 24h</span>
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Vagas: 15</span>
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Idade: 18+</span>
+</div>
+</article>
+<article class="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 p-5">
+<div class="flex items-start justify-between gap-3">
+<h3 class="font-bold text-base text-primary">CULTIVO DE PLANTAS AGROINDUSTRIAIS - CANA DE AÇÚCAR</h3>
+<span class="text-[10px] font-bold uppercase tracking-wider text-secondary bg-secondary/10 px-2 py-1 rounded">AGRICULTURA</span>
+</div>
+<div class="mt-3 flex flex-wrap gap-2 text-xs text-slate-600 dark:text-slate-300">
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Carga: 24h</span>
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Vagas: 15</span>
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Idade: 18+</span>
+</div>
+</article>
+<article class="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 p-5">
+<div class="flex items-start justify-between gap-3">
+<h3 class="font-bold text-base text-primary">CULTIVO DE PLANTAS MEDICINAIS</h3>
+<span class="text-[10px] font-bold uppercase tracking-wider text-secondary bg-secondary/10 px-2 py-1 rounded">AGRICULTURA</span>
+</div>
+<div class="mt-3 flex flex-wrap gap-2 text-xs text-slate-600 dark:text-slate-300">
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Carga: 24h</span>
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Vagas: 15</span>
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Idade: 18+</span>
+</div>
+</article>
+<article class="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 p-5">
+<div class="flex items-start justify-between gap-3">
+<h3 class="font-bold text-base text-primary">CULTIVO DE PLANTAS ORNAMENTAIS</h3>
+<span class="text-[10px] font-bold uppercase tracking-wider text-secondary bg-secondary/10 px-2 py-1 rounded">AGRICULTURA</span>
+</div>
+<div class="mt-3 flex flex-wrap gap-2 text-xs text-slate-600 dark:text-slate-300">
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Carga: 24h</span>
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Vagas: 15</span>
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Idade: 18+</span>
+</div>
+</article>
+<article class="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 p-5">
+<div class="flex items-start justify-between gap-3">
+<h3 class="font-bold text-base text-primary">CULTIVO DE TREPADEIRAS FRUTÍFERAS (MARACUJÁ)</h3>
+<span class="text-[10px] font-bold uppercase tracking-wider text-secondary bg-secondary/10 px-2 py-1 rounded">AGRICULTURA</span>
+</div>
+<div class="mt-3 flex flex-wrap gap-2 text-xs text-slate-600 dark:text-slate-300">
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Carga: 24h</span>
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Vagas: 15</span>
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Idade: 18+</span>
+</div>
+</article>
+<article class="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 p-5">
+<div class="flex items-start justify-between gap-3">
+<h3 class="font-bold text-base text-primary">CULTIVO DO AÇAIZEIRO</h3>
+<span class="text-[10px] font-bold uppercase tracking-wider text-secondary bg-secondary/10 px-2 py-1 rounded">AGRICULTURA</span>
+</div>
+<div class="mt-3 flex flex-wrap gap-2 text-xs text-slate-600 dark:text-slate-300">
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Carga: 24h</span>
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Vagas: 15</span>
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Idade: 18+</span>
+</div>
+</article>
+<article class="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 p-5">
+<div class="flex items-start justify-between gap-3">
+<h3 class="font-bold text-base text-primary">INSPETOR DE CAMPO EM MANEJO INTEGRADO DE PRAGAS EM SOJA</h3>
+<span class="text-[10px] font-bold uppercase tracking-wider text-secondary bg-secondary/10 px-2 py-1 rounded">AGRICULTURA</span>
+</div>
+<div class="mt-3 flex flex-wrap gap-2 text-xs text-slate-600 dark:text-slate-300">
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Carga: 40h</span>
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Vagas: 15</span>
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Idade: 18+</span>
+</div>
+</article>
+<article class="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 p-5">
+<div class="flex items-start justify-between gap-3">
+<h3 class="font-bold text-base text-primary">PREVENÇÃO E CONTROLE DO FOGO NA AGRICULTURA</h3>
+<span class="text-[10px] font-bold uppercase tracking-wider text-secondary bg-secondary/10 px-2 py-1 rounded">AGRICULTURA</span>
+</div>
+<div class="mt-3 flex flex-wrap gap-2 text-xs text-slate-600 dark:text-slate-300">
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Carga: 24h</span>
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Vagas: 15</span>
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Idade: 18+</span>
+</div>
+</article>
+<article class="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 p-5">
+<div class="flex items-start justify-between gap-3">
+<h3 class="font-bold text-base text-primary">VIVEIRISTA</h3>
+<span class="text-[10px] font-bold uppercase tracking-wider text-secondary bg-secondary/10 px-2 py-1 rounded">AGRICULTURA</span>
+</div>
+<div class="mt-3 flex flex-wrap gap-2 text-xs text-slate-600 dark:text-slate-300">
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Carga: 24h</span>
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Vagas: 15</span>
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Idade: 18+</span>
+</div>
+</article>
+
+<article class="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 p-5">
+<div class="flex items-start justify-between gap-3">
+<h3 class="font-bold text-base text-primary">APROVEITAMENTO INTEGRAL DE PRODUTOS DE ORIGEM VEGETAL - BABAÇU</h3>
+<span class="text-[10px] font-bold uppercase tracking-wider text-secondary bg-secondary/10 px-2 py-1 rounded">AGROINDÚSTRIA</span>
+</div>
+<div class="mt-3 flex flex-wrap gap-2 text-xs text-slate-600 dark:text-slate-300">
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Carga: 32h</span>
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Vagas: 15</span>
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Idade: 18+</span>
+</div>
+</article>
+<article class="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 p-5">
+<div class="flex items-start justify-between gap-3">
+<h3 class="font-bold text-base text-primary">APROVEITAMENTO INTEGRAL DE PRODUTOS DE ORIGEM VEGETAL - CAJU</h3>
+<span class="text-[10px] font-bold uppercase tracking-wider text-secondary bg-secondary/10 px-2 py-1 rounded">AGROINDÚSTRIA</span>
+</div>
+<div class="mt-3 flex flex-wrap gap-2 text-xs text-slate-600 dark:text-slate-300">
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Carga: 32h</span>
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Vagas: 15</span>
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Idade: 18+</span>
+</div>
+</article>
+<article class="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 p-5">
+<div class="flex items-start justify-between gap-3">
+<h3 class="font-bold text-base text-primary">APROVEITAMENTO INTEGRAL DE PRODUTOS DE ORIGEM VEGETAL - MILHO</h3>
+<span class="text-[10px] font-bold uppercase tracking-wider text-secondary bg-secondary/10 px-2 py-1 rounded">AGROINDÚSTRIA</span>
+</div>
+<div class="mt-3 flex flex-wrap gap-2 text-xs text-slate-600 dark:text-slate-300">
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Carga: 32h</span>
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Vagas: 15</span>
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Idade: 18+</span>
+</div>
+</article>
+<article class="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 p-5">
+<div class="flex items-start justify-between gap-3">
+<h3 class="font-bold text-base text-primary">BENEFICIAMENTO E CONSERVAÇÃO DE PESCADO</h3>
+<span class="text-[10px] font-bold uppercase tracking-wider text-secondary bg-secondary/10 px-2 py-1 rounded">AGROINDÚSTRIA</span>
+</div>
+<div class="mt-3 flex flex-wrap gap-2 text-xs text-slate-600 dark:text-slate-300">
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Carga: 32h</span>
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Vagas: 15</span>
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Idade: 18+</span>
+</div>
+</article>
+<article class="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 p-5">
+<div class="flex items-start justify-between gap-3">
+<h3 class="font-bold text-base text-primary">BENEFICIAMENTO PRIMÁRIO DE FRUTAS</h3>
+<span class="text-[10px] font-bold uppercase tracking-wider text-secondary bg-secondary/10 px-2 py-1 rounded">AGROINDÚSTRIA</span>
+</div>
+<div class="mt-3 flex flex-wrap gap-2 text-xs text-slate-600 dark:text-slate-300">
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Carga: 24h</span>
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Vagas: 15</span>
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Idade: 18+</span>
+</div>
+</article>
+<article class="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 p-5">
+<div class="flex items-start justify-between gap-3">
+<h3 class="font-bold text-base text-primary">FABRICAÇÃO ARTESANAL DE CAJUÍNA</h3>
+<span class="text-[10px] font-bold uppercase tracking-wider text-secondary bg-secondary/10 px-2 py-1 rounded">AGROINDÚSTRIA</span>
+</div>
+<div class="mt-3 flex flex-wrap gap-2 text-xs text-slate-600 dark:text-slate-300">
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Carga: 40h</span>
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Vagas: 15</span>
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Idade: 18+</span>
+</div>
+</article>
+<article class="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 p-5">
+<div class="flex items-start justify-between gap-3">
+<h3 class="font-bold text-base text-primary">FABRICAÇÃO CASEIRA DE MELADO, AÇÚCAR MASCAVO E RAPADURA</h3>
+<span class="text-[10px] font-bold uppercase tracking-wider text-secondary bg-secondary/10 px-2 py-1 rounded">AGROINDÚSTRIA</span>
+</div>
+<div class="mt-3 flex flex-wrap gap-2 text-xs text-slate-600 dark:text-slate-300">
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Carga: 24h</span>
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Vagas: 15</span>
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Idade: 18 a 60</span>
+</div>
+</article>
+<article class="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 p-5">
+<div class="flex items-start justify-between gap-3">
+<h3 class="font-bold text-base text-primary">FABRICAÇÃO DE CACHAÇA</h3>
+<span class="text-[10px] font-bold uppercase tracking-wider text-secondary bg-secondary/10 px-2 py-1 rounded">AGROINDÚSTRIA</span>
+</div>
+<div class="mt-3 flex flex-wrap gap-2 text-xs text-slate-600 dark:text-slate-300">
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Carga: 32h</span>
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Vagas: 15</span>
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Idade: 18+</span>
+</div>
+</article>
+<article class="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 p-5">
+<div class="flex items-start justify-between gap-3">
+<h3 class="font-bold text-base text-primary">PRODUÇÃO DE CONSERVAS VEGETAIS, COMPOTAS E FRUTAS CRISTALIZADAS/DESIDRATADOS</h3>
+<span class="text-[10px] font-bold uppercase tracking-wider text-secondary bg-secondary/10 px-2 py-1 rounded">AGROINDÚSTRIA</span>
+</div>
+<div class="mt-3 flex flex-wrap gap-2 text-xs text-slate-600 dark:text-slate-300">
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Carga: 24h</span>
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Vagas: 15</span>
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Idade: 18+</span>
+</div>
+</article>
+<article class="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 p-5">
+<div class="flex items-start justify-between gap-3">
+<h3 class="font-bold text-base text-primary">PRODUÇÃO DE DERIVADOS DO LEITE - IOGURTE E DOCE DE LEITE</h3>
+<span class="text-[10px] font-bold uppercase tracking-wider text-secondary bg-secondary/10 px-2 py-1 rounded">AGROINDÚSTRIA</span>
+</div>
+<div class="mt-3 flex flex-wrap gap-2 text-xs text-slate-600 dark:text-slate-300">
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Carga: 32h</span>
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Vagas: 15</span>
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Idade: 18+</span>
+</div>
+</article>
+<article class="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 p-5">
+<div class="flex items-start justify-between gap-3">
+<h3 class="font-bold text-base text-primary">PRODUÇÃO DE DERIVADOS DO LEITE - QUEIJOS</h3>
+<span class="text-[10px] font-bold uppercase tracking-wider text-secondary bg-secondary/10 px-2 py-1 rounded">AGROINDÚSTRIA</span>
+</div>
+<div class="mt-3 flex flex-wrap gap-2 text-xs text-slate-600 dark:text-slate-300">
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Carga: 32h</span>
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Vagas: 15</span>
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Idade: 18+</span>
+</div>
+</article>
+<article class="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 p-5">
+<div class="flex items-start justify-between gap-3">
+<h3 class="font-bold text-base text-primary">QUALIDADE DO LEITE - IN 76 E IN 77</h3>
+<span class="text-[10px] font-bold uppercase tracking-wider text-secondary bg-secondary/10 px-2 py-1 rounded">AGROINDÚSTRIA</span>
+</div>
+<div class="mt-3 flex flex-wrap gap-2 text-xs text-slate-600 dark:text-slate-300">
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Carga: 24h</span>
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Vagas: 15</span>
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Idade: 18+</span>
+</div>
+</article>
+<article class="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 p-5">
+<div class="flex items-start justify-between gap-3">
+<h3 class="font-bold text-base text-primary">TRANSFORMAÇÃO DA MANDIOCA</h3>
+<span class="text-[10px] font-bold uppercase tracking-wider text-secondary bg-secondary/10 px-2 py-1 rounded">AGROINDÚSTRIA</span>
+</div>
+<div class="mt-3 flex flex-wrap gap-2 text-xs text-slate-600 dark:text-slate-300">
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Carga: 32h</span>
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Vagas: 15</span>
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Idade: 18+</span>
+</div>
+</article>
+<article class="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 p-5">
+<div class="flex items-start justify-between gap-3">
+<h3 class="font-bold text-base text-primary">TRANSFORMAÇÃO DE PRODUTOS DE ORIGEM ANIMAL EM EMBUTIDOS E DEFUMADOS</h3>
+<span class="text-[10px] font-bold uppercase tracking-wider text-secondary bg-secondary/10 px-2 py-1 rounded">AGROINDÚSTRIA</span>
+</div>
+<div class="mt-3 flex flex-wrap gap-2 text-xs text-slate-600 dark:text-slate-300">
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Carga: 32h</span>
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Vagas: 15</span>
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Idade: 18+</span>
+</div>
+</article>
+
+<article class="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 p-5">
+<div class="flex items-start justify-between gap-3">
+<h3 class="font-bold text-base text-primary">CARCINICULTURA</h3>
+<span class="text-[10px] font-bold uppercase tracking-wider text-secondary bg-secondary/10 px-2 py-1 rounded">AQUICULTURA</span>
+</div>
+<div class="mt-3 flex flex-wrap gap-2 text-xs text-slate-600 dark:text-slate-300">
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Carga: 24h</span>
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Vagas: 15</span>
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Idade: 18+</span>
+</div>
+</article>
+<article class="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 p-5">
+<div class="flex items-start justify-between gap-3">
+<h3 class="font-bold text-base text-primary">CULTIVO DE MEXILHÕES - MITILICULTURA</h3>
+<span class="text-[10px] font-bold uppercase tracking-wider text-secondary bg-secondary/10 px-2 py-1 rounded">AQUICULTURA</span>
+</div>
+<div class="mt-3 flex flex-wrap gap-2 text-xs text-slate-600 dark:text-slate-300">
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Carga: 24h</span>
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Vagas: 15</span>
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Idade: 18+</span>
+</div>
+</article>
+<article class="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 p-5">
+<div class="flex items-start justify-between gap-3">
+<h3 class="font-bold text-base text-primary">CULTIVO DE OSTRAS - OSTREICULTURA</h3>
+<span class="text-[10px] font-bold uppercase tracking-wider text-secondary bg-secondary/10 px-2 py-1 rounded">AQUICULTURA</span>
+</div>
+<div class="mt-3 flex flex-wrap gap-2 text-xs text-slate-600 dark:text-slate-300">
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Carga: 24h</span>
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Vagas: 15</span>
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Idade: 18+</span>
+</div>
+</article>
+<article class="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 p-5">
+<div class="flex items-start justify-between gap-3">
+<h3 class="font-bold text-base text-primary">PISCICULTURA</h3>
+<span class="text-[10px] font-bold uppercase tracking-wider text-secondary bg-secondary/10 px-2 py-1 rounded">AQUICULTURA</span>
+</div>
+<div class="mt-3 flex flex-wrap gap-2 text-xs text-slate-600 dark:text-slate-300">
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Carga: 24h</span>
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Vagas: 15</span>
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Idade: 18+</span>
+</div>
+</article>
+
+<article class="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 p-5">
+<div class="flex items-start justify-between gap-3">
+<h3 class="font-bold text-base text-primary">ADMINISTRAÇÃO DE COOPERATIVAS RURAIS</h3>
+<span class="text-[10px] font-bold uppercase tracking-wider text-secondary bg-secondary/10 px-2 py-1 rounded">ATIVIDADES DE APOIO AGROSSILVIPASTORIL</span>
+</div>
+<div class="mt-3 flex flex-wrap gap-2 text-xs text-slate-600 dark:text-slate-300">
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Carga: 40h</span>
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Vagas: 20</span>
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Idade: 18+</span>
+</div>
+</article>
+<article class="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 p-5">
+<div class="flex items-start justify-between gap-3">
+<h3 class="font-bold text-base text-primary">ADMINISTRAÇÃO DE PROPRIEDADES EM REGIME DE ECONOMIA FAMILIAR</h3>
+<span class="text-[10px] font-bold uppercase tracking-wider text-secondary bg-secondary/10 px-2 py-1 rounded">ATIVIDADES DE APOIO AGROSSILVIPASTORIL</span>
+</div>
+<div class="mt-3 flex flex-wrap gap-2 text-xs text-slate-600 dark:text-slate-300">
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Carga: 40h</span>
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Vagas: 20</span>
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Idade: 18+</span>
+</div>
+</article>
+<article class="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 p-5">
+<div class="flex items-start justify-between gap-3">
+<h3 class="font-bold text-base text-primary">APLICAÇÃO DE AGROTÓXICOS UTILIZANDO PULVERIZADOR AUTOPROPELIDO</h3>
+<span class="text-[10px] font-bold uppercase tracking-wider text-secondary bg-secondary/10 px-2 py-1 rounded">ATIVIDADES DE APOIO AGROSSILVIPASTORIL</span>
+</div>
+<div class="mt-3 flex flex-wrap gap-2 text-xs text-slate-600 dark:text-slate-300">
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Carga: 24h</span>
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Vagas: 15</span>
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Idade: 18+</span>
+</div>
+</article>
+<article class="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 p-5">
+<div class="flex items-start justify-between gap-3">
+<h3 class="font-bold text-base text-primary">APLICAÇÃO DE AGROTÓXICOS UTILIZANDO PULVERIZADOR COSTAL MANUAL</h3>
+<span class="text-[10px] font-bold uppercase tracking-wider text-secondary bg-secondary/10 px-2 py-1 rounded">ATIVIDADES DE APOIO AGROSSILVIPASTORIL</span>
+</div>
+<div class="mt-3 flex flex-wrap gap-2 text-xs text-slate-600 dark:text-slate-300">
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Carga: 24h</span>
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Vagas: 15</span>
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Idade: 18+</span>
+</div>
+</article>
+<article class="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 p-5">
+<div class="flex items-start justify-between gap-3">
+<h3 class="font-bold text-base text-primary">APLICAÇÃO DE AGROTÓXICOS UTILIZANDO PULVERIZADOR TRATORIZADO</h3>
+<span class="text-[10px] font-bold uppercase tracking-wider text-secondary bg-secondary/10 px-2 py-1 rounded">ATIVIDADES DE APOIO AGROSSILVIPASTORIL</span>
+</div>
+<div class="mt-3 flex flex-wrap gap-2 text-xs text-slate-600 dark:text-slate-300">
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Carga: 24h</span>
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Vagas: 15</span>
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Idade: 18+</span>
+</div>
+</article>
+<article class="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 p-5">
+<div class="flex items-start justify-between gap-3">
+<h3 class="font-bold text-base text-primary">CALIBRAÇÃO DE COLHEDORAS AUTOMOTRIZES</h3>
+<span class="text-[10px] font-bold uppercase tracking-wider text-secondary bg-secondary/10 px-2 py-1 rounded">ATIVIDADES DE APOIO AGROSSILVIPASTORIL</span>
+</div>
+<div class="mt-3 flex flex-wrap gap-2 text-xs text-slate-600 dark:text-slate-300">
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Carga: 40h</span>
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Vagas: 10</span>
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Idade: 18+</span>
+</div>
+</article>
+<article class="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 p-5">
+<div class="flex items-start justify-between gap-3">
+<h3 class="font-bold text-base text-primary">NR 31.12 - SEGURANÇA NO TRABALHO EM MÁQUINAS E IMPLEMENTOS AGRÍCOLAS</h3>
+<span class="text-[10px] font-bold uppercase tracking-wider text-secondary bg-secondary/10 px-2 py-1 rounded">ATIVIDADES DE APOIO AGROSSILVIPASTORIL</span>
+</div>
+<div class="mt-3 flex flex-wrap gap-2 text-xs text-slate-600 dark:text-slate-300">
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Carga: 16h</span>
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Vagas: 20</span>
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Idade: 18+</span>
+</div>
+</article>
+<article class="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 p-5">
+<div class="flex items-start justify-between gap-3">
+<h3 class="font-bold text-base text-primary">NR 31.15 - TRABALHO EM ALTURA</h3>
+<span class="text-[10px] font-bold uppercase tracking-wider text-secondary bg-secondary/10 px-2 py-1 rounded">ATIVIDADES DE APOIO AGROSSILVIPASTORIL</span>
+</div>
+<div class="mt-3 flex flex-wrap gap-2 text-xs text-slate-600 dark:text-slate-300">
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Carga: 16h</span>
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Vagas: 20</span>
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Idade: 18 a 60</span>
+</div>
+</article>
+<article class="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 p-5">
+<div class="flex items-start justify-between gap-3">
+<h3 class="font-bold text-base text-primary">NR 31.7 - SEGURANÇA NO TRABALHO - APLICAÇÃO DE AGROTÓXICO, ADITIVOS, ADJUVANTES E PRODUTOS AFINS</h3>
+<span class="text-[10px] font-bold uppercase tracking-wider text-secondary bg-secondary/10 px-2 py-1 rounded">ATIVIDADES DE APOIO AGROSSILVIPASTORIL</span>
+</div>
+<div class="mt-3 flex flex-wrap gap-2 text-xs text-slate-600 dark:text-slate-300">
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Carga: 20h</span>
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Vagas: 20</span>
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Idade: 18+</span>
+</div>
+</article>
+<article class="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 p-5">
+<div class="flex items-start justify-between gap-3">
+<h3 class="font-bold text-base text-primary">NR 33 - ESPAÇO CONFINADO</h3>
+<span class="text-[10px] font-bold uppercase tracking-wider text-secondary bg-secondary/10 px-2 py-1 rounded">ATIVIDADES DE APOIO AGROSSILVIPASTORIL</span>
+</div>
+<div class="mt-3 flex flex-wrap gap-2 text-xs text-slate-600 dark:text-slate-300">
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Carga: 16h</span>
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Vagas: 20</span>
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Idade: 18+</span>
+</div>
+</article>
+<article class="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 p-5">
+<div class="flex items-start justify-between gap-3">
+<h3 class="font-bold text-base text-primary">OPERAÇÃO DE MÁQUINAS E REGULAGEM DE IMPLEMENTOS AGRÍCOLAS PARA PREPARO E CORREÇÃO DO SOLO</h3>
+<span class="text-[10px] font-bold uppercase tracking-wider text-secondary bg-secondary/10 px-2 py-1 rounded">ATIVIDADES DE APOIO AGROSSILVIPASTORIL</span>
+</div>
+<div class="mt-3 flex flex-wrap gap-2 text-xs text-slate-600 dark:text-slate-300">
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Carga: 40h</span>
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Vagas: 10</span>
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Idade: 18+</span>
+</div>
+</article>
+<article class="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 p-5">
+<div class="flex items-start justify-between gap-3">
+<h3 class="font-bold text-base text-primary">OPERAÇÃO E MANUTENÇÃO BÁSICA DE EMPILHADEIRA</h3>
+<span class="text-[10px] font-bold uppercase tracking-wider text-secondary bg-secondary/10 px-2 py-1 rounded">ATIVIDADES DE APOIO AGROSSILVIPASTORIL</span>
+</div>
+<div class="mt-3 flex flex-wrap gap-2 text-xs text-slate-600 dark:text-slate-300">
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Carga: 40h</span>
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Vagas: 15</span>
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Idade: 18+</span>
+</div>
+</article>
+<article class="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 p-5">
+<div class="flex items-start justify-between gap-3">
+<h3 class="font-bold text-base text-primary">OPERAÇÃO E MANUTENÇÃO DE COLHEDORAS AUTOMOTRIZES</h3>
+<span class="text-[10px] font-bold uppercase tracking-wider text-secondary bg-secondary/10 px-2 py-1 rounded">ATIVIDADES DE APOIO AGROSSILVIPASTORIL</span>
+</div>
+<div class="mt-3 flex flex-wrap gap-2 text-xs text-slate-600 dark:text-slate-300">
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Carga: 40h</span>
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Vagas: 10</span>
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Idade: 18 a 60</span>
+</div>
+</article>
+<article class="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 p-5">
+<div class="flex items-start justify-between gap-3">
+<h3 class="font-bold text-base text-primary">OPERAÇÃO E MANUTENÇÃO DE MOTOSSERRA</h3>
+<span class="text-[10px] font-bold uppercase tracking-wider text-secondary bg-secondary/10 px-2 py-1 rounded">ATIVIDADES DE APOIO AGROSSILVIPASTORIL</span>
+</div>
+<div class="mt-3 flex flex-wrap gap-2 text-xs text-slate-600 dark:text-slate-300">
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Carga: 24h</span>
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Vagas: 15</span>
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Idade: 18+</span>
+</div>
+</article>
+<article class="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 p-5">
+<div class="flex items-start justify-between gap-3">
+<h3 class="font-bold text-base text-primary">OPERAÇÃO E MANUTENÇÃO DE TRATORES AGRÍCOLAS</h3>
+<span class="text-[10px] font-bold uppercase tracking-wider text-secondary bg-secondary/10 px-2 py-1 rounded">ATIVIDADES DE APOIO AGROSSILVIPASTORIL</span>
+</div>
+<div class="mt-3 flex flex-wrap gap-2 text-xs text-slate-600 dark:text-slate-300">
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Carga: 40h</span>
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Vagas: 10</span>
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Idade: 18+</span>
+</div>
+</article>
+<article class="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 p-5">
+<div class="flex items-start justify-between gap-3">
+<h3 class="font-bold text-base text-primary">OPERAÇÃO E NA MANUTENÇÃO DE SISTEMAS CONVENCIONAIS DE IRRIGAÇÃO POR ASPERSÃO</h3>
+<span class="text-[10px] font-bold uppercase tracking-wider text-secondary bg-secondary/10 px-2 py-1 rounded">ATIVIDADES DE APOIO AGROSSILVIPASTORIL</span>
+</div>
+<div class="mt-3 flex flex-wrap gap-2 text-xs text-slate-600 dark:text-slate-300">
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Carga: 32h</span>
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Vagas: 15</span>
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Idade: 18+</span>
+</div>
+</article>
+<article class="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 p-5">
+<div class="flex items-start justify-between gap-3">
+<h3 class="font-bold text-base text-primary">OPERAÇÃO E NA MANUTENÇÃO DE SISTEMAS DE IRRIGAÇÃO POR GOTEJAMENTO</h3>
+<span class="text-[10px] font-bold uppercase tracking-wider text-secondary bg-secondary/10 px-2 py-1 rounded">ATIVIDADES DE APOIO AGROSSILVIPASTORIL</span>
+</div>
+<div class="mt-3 flex flex-wrap gap-2 text-xs text-slate-600 dark:text-slate-300">
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Carga: 32h</span>
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Vagas: 15</span>
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Idade: 18+</span>
+</div>
+</article>
+<article class="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 p-5">
+<div class="flex items-start justify-between gap-3">
+<h3 class="font-bold text-base text-primary">PILOTAGEM DE DRONES</h3>
+<span class="text-[10px] font-bold uppercase tracking-wider text-secondary bg-secondary/10 px-2 py-1 rounded">ATIVIDADES DE APOIO AGROSSILVIPASTORIL</span>
+</div>
+<div class="mt-3 flex flex-wrap gap-2 text-xs text-slate-600 dark:text-slate-300">
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Carga: 24h</span>
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Vagas: 12</span>
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Idade: 18+</span>
+</div>
+</article>
+<article class="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 p-5">
+<div class="flex items-start justify-between gap-3">
+<h3 class="font-bold text-base text-primary">PILOTAGEM DE DRONES PARA APLICAÇÕES AGRÍCOLAS</h3>
+<span class="text-[10px] font-bold uppercase tracking-wider text-secondary bg-secondary/10 px-2 py-1 rounded">ATIVIDADES DE APOIO AGROSSILVIPASTORIL</span>
+</div>
+<div class="mt-3 flex flex-wrap gap-2 text-xs text-slate-600 dark:text-slate-300">
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Carga: 24h</span>
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Vagas: 10</span>
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Idade: 18+</span>
+</div>
+</article>
+<article class="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 p-5">
+<div class="flex items-start justify-between gap-3">
+<h3 class="font-bold text-base text-primary">USO DE DRONES PARA MONITORAMENTO DE ÁREAS AGRÍCOLAS</h3>
+<span class="text-[10px] font-bold uppercase tracking-wider text-secondary bg-secondary/10 px-2 py-1 rounded">ATIVIDADES DE APOIO AGROSSILVIPASTORIL</span>
+</div>
+<div class="mt-3 flex flex-wrap gap-2 text-xs text-slate-600 dark:text-slate-300">
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Carga: 24h</span>
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Vagas: 10</span>
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Idade: 18+</span>
+</div>
+</article>
+
+<article class="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 p-5">
+<div class="flex items-start justify-between gap-3">
+<h3 class="font-bold text-base text-primary">ANÁLISE E CLASSIFICAÇÃO DE GRÃOS DE ARROZ</h3>
+<span class="text-[10px] font-bold uppercase tracking-wider text-secondary bg-secondary/10 px-2 py-1 rounded">ATIVIDADES RELATIVAS À PRESTAÇÃO DE SERVIÇOS</span>
+</div>
+<div class="mt-3 flex flex-wrap gap-2 text-xs text-slate-600 dark:text-slate-300">
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Carga: 32h</span>
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Vagas: 10</span>
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Idade: 18+</span>
+</div>
+</article>
+<article class="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 p-5">
+<div class="flex items-start justify-between gap-3">
+<h3 class="font-bold text-base text-primary">ANÁLISE E CLASSIFICAÇÃO DE GRÃOS DE SOJA E MILHO</h3>
+<span class="text-[10px] font-bold uppercase tracking-wider text-secondary bg-secondary/10 px-2 py-1 rounded">ATIVIDADES RELATIVAS À PRESTAÇÃO DE SERVIÇOS</span>
+</div>
+<div class="mt-3 flex flex-wrap gap-2 text-xs text-slate-600 dark:text-slate-300">
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Carga: 32h</span>
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Vagas: 10</span>
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Idade: 18+</span>
+</div>
+</article>
+<article class="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 p-5">
+<div class="flex items-start justify-between gap-3">
+<h3 class="font-bold text-base text-primary">CONSTRUÇÕES RURAIS: BIODIGESTORES</h3>
+<span class="text-[10px] font-bold uppercase tracking-wider text-secondary bg-secondary/10 px-2 py-1 rounded">ATIVIDADES RELATIVAS À PRESTAÇÃO DE SERVIÇOS</span>
+</div>
+<div class="mt-3 flex flex-wrap gap-2 text-xs text-slate-600 dark:text-slate-300">
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Carga: 32h</span>
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Vagas: 15</span>
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Idade: 18+</span>
+</div>
+</article>
+<article class="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 p-5">
+<div class="flex items-start justify-between gap-3">
+<h3 class="font-bold text-base text-primary">CONSTRUÇÕES RURAIS: CERCAS ELÉTRICAS</h3>
+<span class="text-[10px] font-bold uppercase tracking-wider text-secondary bg-secondary/10 px-2 py-1 rounded">ATIVIDADES RELATIVAS À PRESTAÇÃO DE SERVIÇOS</span>
+</div>
+<div class="mt-3 flex flex-wrap gap-2 text-xs text-slate-600 dark:text-slate-300">
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Carga: 24h</span>
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Vagas: 15</span>
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Idade: 18+</span>
+</div>
+</article>
+<article class="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 p-5">
+<div class="flex items-start justify-between gap-3">
+<h3 class="font-bold text-base text-primary">TURISMO RURAL</h3>
+<span class="text-[10px] font-bold uppercase tracking-wider text-secondary bg-secondary/10 px-2 py-1 rounded">ATIVIDADES RELATIVAS À PRESTAÇÃO DE SERVIÇOS</span>
+</div>
+<div class="mt-3 flex flex-wrap gap-2 text-xs text-slate-600 dark:text-slate-300">
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Carga: 24h</span>
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Vagas: 15</span>
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Idade: 18+</span>
+</div>
+</article>
+
+<article class="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 p-5">
+<div class="flex items-start justify-between gap-3">
+<h3 class="font-bold text-base text-primary">APICULTURA - MANEJO DE ABELHAS SEM FERRÃO</h3>
+<span class="text-[10px] font-bold uppercase tracking-wider text-secondary bg-secondary/10 px-2 py-1 rounded">PECUÁRIA</span>
+</div>
+<div class="mt-3 flex flex-wrap gap-2 text-xs text-slate-600 dark:text-slate-300">
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Carga: 24h</span>
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Vagas: 15</span>
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Idade: 18+</span>
+</div>
+</article>
+<article class="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 p-5">
+<div class="flex items-start justify-between gap-3">
+<h3 class="font-bold text-base text-primary">APICULTURA AVANÇADA</h3>
+<span class="text-[10px] font-bold uppercase tracking-wider text-secondary bg-secondary/10 px-2 py-1 rounded">PECUÁRIA</span>
+</div>
+<div class="mt-3 flex flex-wrap gap-2 text-xs text-slate-600 dark:text-slate-300">
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Carga: 24h</span>
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Vagas: 15</span>
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Idade: 18+</span>
+</div>
+</article>
+<article class="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 p-5">
+<div class="flex items-start justify-between gap-3">
+<h3 class="font-bold text-base text-primary">APICULTURA AVANÇADA - PRODUÇÃO DE PRÓPOLIS</h3>
+<span class="text-[10px] font-bold uppercase tracking-wider text-secondary bg-secondary/10 px-2 py-1 rounded">PECUÁRIA</span>
+</div>
+<div class="mt-3 flex flex-wrap gap-2 text-xs text-slate-600 dark:text-slate-300">
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Carga: 40h</span>
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Vagas: 15</span>
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Idade: 18+</span>
+</div>
+</article>
+<article class="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 p-5">
+<div class="flex items-start justify-between gap-3">
+<h3 class="font-bold text-base text-primary">APICULTURA BÁSICA</h3>
+<span class="text-[10px] font-bold uppercase tracking-wider text-secondary bg-secondary/10 px-2 py-1 rounded">PECUÁRIA</span>
+</div>
+<div class="mt-3 flex flex-wrap gap-2 text-xs text-slate-600 dark:text-slate-300">
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Carga: 24h</span>
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Vagas: 15</span>
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Idade: 18+</span>
+</div>
+</article>
+<article class="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 p-5">
+<div class="flex items-start justify-between gap-3">
+<h3 class="font-bold text-base text-primary">AVICULTURA BÁSICA</h3>
+<span class="text-[10px] font-bold uppercase tracking-wider text-secondary bg-secondary/10 px-2 py-1 rounded">PECUÁRIA</span>
+</div>
+<div class="mt-3 flex flex-wrap gap-2 text-xs text-slate-600 dark:text-slate-300">
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Carga: 24h</span>
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Vagas: 15</span>
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Idade: 18+</span>
+</div>
+</article>
+<article class="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 p-5">
+<div class="flex items-start justify-between gap-3">
+<h3 class="font-bold text-base text-primary">AVICULTURA DE CORTE</h3>
+<span class="text-[10px] font-bold uppercase tracking-wider text-secondary bg-secondary/10 px-2 py-1 rounded">PECUÁRIA</span>
+</div>
+<div class="mt-3 flex flex-wrap gap-2 text-xs text-slate-600 dark:text-slate-300">
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Carga: 24h</span>
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Vagas: 15</span>
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Idade: 18+</span>
+</div>
+</article>
+<article class="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 p-5">
+<div class="flex items-start justify-between gap-3">
+<h3 class="font-bold text-base text-primary">AVICULTURA DE POSTURA</h3>
+<span class="text-[10px] font-bold uppercase tracking-wider text-secondary bg-secondary/10 px-2 py-1 rounded">PECUÁRIA</span>
+</div>
+<div class="mt-3 flex flex-wrap gap-2 text-xs text-slate-600 dark:text-slate-300">
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Carga: 24h</span>
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Vagas: 15</span>
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Idade: 18+</span>
+</div>
+</article>
+<article class="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 p-5">
+<div class="flex items-start justify-between gap-3">
+<h3 class="font-bold text-base text-primary">BOVINOCULTURA - SILAGEM</h3>
+<span class="text-[10px] font-bold uppercase tracking-wider text-secondary bg-secondary/10 px-2 py-1 rounded">PECUÁRIA</span>
+</div>
+<div class="mt-3 flex flex-wrap gap-2 text-xs text-slate-600 dark:text-slate-300">
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Carga: 24h</span>
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Vagas: 15</span>
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Idade: 18+</span>
+</div>
+</article>
+<article class="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 p-5">
+<div class="flex items-start justify-between gap-3">
+<h3 class="font-bold text-base text-primary">BOVINOCULTURA DE CORTE - MANEJO ALIMENTAR</h3>
+<span class="text-[10px] font-bold uppercase tracking-wider text-secondary bg-secondary/10 px-2 py-1 rounded">PECUÁRIA</span>
+</div>
+<div class="mt-3 flex flex-wrap gap-2 text-xs text-slate-600 dark:text-slate-300">
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Carga: 24h</span>
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Vagas: 15</span>
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Idade: 18+</span>
+</div>
+</article>
+<article class="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 p-5">
+<div class="flex items-start justify-between gap-3">
+<h3 class="font-bold text-base text-primary">BOVINOCULTURA DE CORTE - MANEJO SANITÁRIO</h3>
+<span class="text-[10px] font-bold uppercase tracking-wider text-secondary bg-secondary/10 px-2 py-1 rounded">PECUÁRIA</span>
+</div>
+<div class="mt-3 flex flex-wrap gap-2 text-xs text-slate-600 dark:text-slate-300">
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Carga: 24h</span>
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Vagas: 15</span>
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Idade: 18+</span>
+</div>
+</article>
+<article class="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 p-5">
+<div class="flex items-start justify-between gap-3">
+<h3 class="font-bold text-base text-primary">BOVINOCULTURA DE LEITE – MANEJO ALIMENTAR</h3>
+<span class="text-[10px] font-bold uppercase tracking-wider text-secondary bg-secondary/10 px-2 py-1 rounded">PECUÁRIA</span>
+</div>
+<div class="mt-3 flex flex-wrap gap-2 text-xs text-slate-600 dark:text-slate-300">
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Carga: 24h</span>
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Vagas: 15</span>
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Idade: 18+</span>
+</div>
+</article>
+<article class="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 p-5">
+<div class="flex items-start justify-between gap-3">
+<h3 class="font-bold text-base text-primary">BOVINOCULTURA DE LEITE MANEJO SANITÁRIO</h3>
+<span class="text-[10px] font-bold uppercase tracking-wider text-secondary bg-secondary/10 px-2 py-1 rounded">PECUÁRIA</span>
+</div>
+<div class="mt-3 flex flex-wrap gap-2 text-xs text-slate-600 dark:text-slate-300">
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Carga: 24h</span>
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Vagas: 15</span>
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Idade: 18+</span>
+</div>
+</article>
+<article class="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 p-5">
+<div class="flex items-start justify-between gap-3">
+<h3 class="font-bold text-base text-primary">CAPRINOCULTURA</h3>
+<span class="text-[10px] font-bold uppercase tracking-wider text-secondary bg-secondary/10 px-2 py-1 rounded">PECUÁRIA</span>
+</div>
+<div class="mt-3 flex flex-wrap gap-2 text-xs text-slate-600 dark:text-slate-300">
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Carga: 24h</span>
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Vagas: 15</span>
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Idade: 18+</span>
+</div>
+</article>
+<article class="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 p-5">
+<div class="flex items-start justify-between gap-3">
+<h3 class="font-bold text-base text-primary">CASQUEAMENTO E FERRAGEAMENTO DE EQUIDEOS</h3>
+<span class="text-[10px] font-bold uppercase tracking-wider text-secondary bg-secondary/10 px-2 py-1 rounded">PECUÁRIA</span>
+</div>
+<div class="mt-3 flex flex-wrap gap-2 text-xs text-slate-600 dark:text-slate-300">
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Carga: 40h</span>
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Vagas: 12</span>
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Idade: 18+</span>
+</div>
+</article>
+<article class="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 p-5">
+<div class="flex items-start justify-between gap-3">
+<h3 class="font-bold text-base text-primary">CASQUEAMENTO PREVENTIVO DE BOVINOS</h3>
+<span class="text-[10px] font-bold uppercase tracking-wider text-secondary bg-secondary/10 px-2 py-1 rounded">PECUÁRIA</span>
+</div>
+<div class="mt-3 flex flex-wrap gap-2 text-xs text-slate-600 dark:text-slate-300">
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Carga: 24h</span>
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Vagas: 12</span>
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Idade: 18+</span>
+</div>
+</article>
+<article class="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 p-5">
+<div class="flex items-start justify-between gap-3">
+<h3 class="font-bold text-base text-primary">DOMA RACIONAL DE EQUINOS E MUARES</h3>
+<span class="text-[10px] font-bold uppercase tracking-wider text-secondary bg-secondary/10 px-2 py-1 rounded">PECUÁRIA</span>
+</div>
+<div class="mt-3 flex flex-wrap gap-2 text-xs text-slate-600 dark:text-slate-300">
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Carga: 40h</span>
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Vagas: 10</span>
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Idade: 18+</span>
+</div>
+</article>
+<article class="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 p-5">
+<div class="flex items-start justify-between gap-3">
+<h3 class="font-bold text-base text-primary">EQUIDEOCULTURA: MANEJO E ALIMENTAÇÃO</h3>
+<span class="text-[10px] font-bold uppercase tracking-wider text-secondary bg-secondary/10 px-2 py-1 rounded">PECUÁRIA</span>
+</div>
+<div class="mt-3 flex flex-wrap gap-2 text-xs text-slate-600 dark:text-slate-300">
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Carga: 24h</span>
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Vagas: 15</span>
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Idade: 18+</span>
+</div>
+</article>
+<article class="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 p-5">
+<div class="flex items-start justify-between gap-3">
+<h3 class="font-bold text-base text-primary">EXTRAÇÃO E BENEFICIAMENTO DO MEL</h3>
+<span class="text-[10px] font-bold uppercase tracking-wider text-secondary bg-secondary/10 px-2 py-1 rounded">PECUÁRIA</span>
+</div>
+<div class="mt-3 flex flex-wrap gap-2 text-xs text-slate-600 dark:text-slate-300">
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Carga: 24h</span>
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Vagas: 15</span>
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Idade: 18+</span>
+</div>
+</article>
+<article class="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 p-5">
+<div class="flex items-start justify-between gap-3">
+<h3 class="font-bold text-base text-primary">HIGIENE NA ORDENHA</h3>
+<span class="text-[10px] font-bold uppercase tracking-wider text-secondary bg-secondary/10 px-2 py-1 rounded">PECUÁRIA</span>
+</div>
+<div class="mt-3 flex flex-wrap gap-2 text-xs text-slate-600 dark:text-slate-300">
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Carga: 24h</span>
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Vagas: 15</span>
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Idade: 18+</span>
+</div>
+</article>
+<article class="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 p-5">
+<div class="flex items-start justify-between gap-3">
+<h3 class="font-bold text-base text-primary">INSEMINAÇÃO ARTIFICIAL EM BOVINOS</h3>
+<span class="text-[10px] font-bold uppercase tracking-wider text-secondary bg-secondary/10 px-2 py-1 rounded">PECUÁRIA</span>
+</div>
+<div class="mt-3 flex flex-wrap gap-2 text-xs text-slate-600 dark:text-slate-300">
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Carga: 40h</span>
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Vagas: 10</span>
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Idade: 18+</span>
+</div>
+</article>
+<article class="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 p-5">
+<div class="flex items-start justify-between gap-3">
+<h3 class="font-bold text-base text-primary">MANEJO E RECUPERAÇÃO DE PASTAGENS</h3>
+<span class="text-[10px] font-bold uppercase tracking-wider text-secondary bg-secondary/10 px-2 py-1 rounded">PECUÁRIA</span>
+</div>
+<div class="mt-3 flex flex-wrap gap-2 text-xs text-slate-600 dark:text-slate-300">
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Carga: 24h</span>
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Vagas: 15</span>
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Idade: 18+</span>
+</div>
+</article>
+<article class="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 p-5">
+<div class="flex items-start justify-between gap-3">
+<h3 class="font-bold text-base text-primary">MANEJO RACIONAL DE BOVINOS DE CORTE</h3>
+<span class="text-[10px] font-bold uppercase tracking-wider text-secondary bg-secondary/10 px-2 py-1 rounded">PECUÁRIA</span>
+</div>
+<div class="mt-3 flex flex-wrap gap-2 text-xs text-slate-600 dark:text-slate-300">
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Carga: 24h</span>
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Vagas: 15</span>
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Idade: 18+</span>
+</div>
+</article>
+<article class="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 p-5">
+<div class="flex items-start justify-between gap-3">
+<h3 class="font-bold text-base text-primary">OVINOCULTURA</h3>
+<span class="text-[10px] font-bold uppercase tracking-wider text-secondary bg-secondary/10 px-2 py-1 rounded">PECUÁRIA</span>
+</div>
+<div class="mt-3 flex flex-wrap gap-2 text-xs text-slate-600 dark:text-slate-300">
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Carga: 24h</span>
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Vagas: 15</span>
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Idade: 18+</span>
+</div>
+</article>
+<article class="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 p-5">
+<div class="flex items-start justify-between gap-3">
+<h3 class="font-bold text-base text-primary">RÉDEAS DE EQUINOS E MUARES</h3>
+<span class="text-[10px] font-bold uppercase tracking-wider text-secondary bg-secondary/10 px-2 py-1 rounded">PECUÁRIA</span>
+</div>
+<div class="mt-3 flex flex-wrap gap-2 text-xs text-slate-600 dark:text-slate-300">
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Carga: 40h</span>
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Vagas: 10</span>
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Idade: 18+</span>
+</div>
+</article>
+<article class="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 p-5">
+<div class="flex items-start justify-between gap-3">
+<h3 class="font-bold text-base text-primary">SUINOCULTURA</h3>
+<span class="text-[10px] font-bold uppercase tracking-wider text-secondary bg-secondary/10 px-2 py-1 rounded">PECUÁRIA</span>
+</div>
+<div class="mt-3 flex flex-wrap gap-2 text-xs text-slate-600 dark:text-slate-300">
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Carga: 24h</span>
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Vagas: 15</span>
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Idade: 18+</span>
+</div>
+</article>
+
+<article class="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 p-5">
+<div class="flex items-start justify-between gap-3">
+<h3 class="font-bold text-base text-primary">FLORESTAMENTO</h3>
+<span class="text-[10px] font-bold uppercase tracking-wider text-secondary bg-secondary/10 px-2 py-1 rounded">SILVICULTURA</span>
+</div>
+<div class="mt-3 flex flex-wrap gap-2 text-xs text-slate-600 dark:text-slate-300">
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Carga: 24h</span>
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Vagas: 15</span>
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Idade: 18+</span>
+</div>
+</article>
+<article class="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 p-5">
+<div class="flex items-start justify-between gap-3">
+<h3 class="font-bold text-base text-primary">MANEJO DE FLORESTAS PLANTADAS</h3>
+<span class="text-[10px] font-bold uppercase tracking-wider text-secondary bg-secondary/10 px-2 py-1 rounded">SILVICULTURA</span>
+</div>
+<div class="mt-3 flex flex-wrap gap-2 text-xs text-slate-600 dark:text-slate-300">
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Carga: 24h</span>
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Vagas: 15</span>
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Idade: 18+</span>
+</div>
+</article>
+<article class="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 p-5">
+<div class="flex items-start justify-between gap-3">
+<h3 class="font-bold text-base text-primary">REFLORESTAMENTO</h3>
+<span class="text-[10px] font-bold uppercase tracking-wider text-secondary bg-secondary/10 px-2 py-1 rounded">SILVICULTURA</span>
+</div>
+<div class="mt-3 flex flex-wrap gap-2 text-xs text-slate-600 dark:text-slate-300">
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Carga: 24h</span>
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Vagas: 15</span>
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Idade: 18+</span>
+</div>
+</article>
+<article class="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 p-5">
+<div class="flex items-start justify-between gap-3">
+<h3 class="font-bold text-base text-primary">SISTEMAS AGROFLORESTAIS</h3>
+<span class="text-[10px] font-bold uppercase tracking-wider text-secondary bg-secondary/10 px-2 py-1 rounded">SILVICULTURA</span>
+</div>
+<div class="mt-3 flex flex-wrap gap-2 text-xs text-slate-600 dark:text-slate-300">
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Carga: 24h</span>
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Vagas: 15</span>
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Idade: 18+</span>
+</div>
+</article>
+<article class="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 p-5">
+<div class="flex items-start justify-between gap-3">
+<h3 class="font-bold text-base text-primary">VIVEIRISTA FLORESTAL</h3>
+<span class="text-[10px] font-bold uppercase tracking-wider text-secondary bg-secondary/10 px-2 py-1 rounded">SILVICULTURA</span>
+</div>
+<div class="mt-3 flex flex-wrap gap-2 text-xs text-slate-600 dark:text-slate-300">
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Carga: 24h</span>
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Vagas: 15</span>
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700">Idade: 18+</span>
+</div>
+</article>
+</div>
+<div class="mt-10 flex flex-wrap items-center justify-center gap-2" id="courses-pagination"></div>
+</div>
+</div>
+</main>
+<section class="mt-20 px-4 md:px-20 lg:px-40 py-16 bg-primary text-white rounded-t-[3rem]">
+<div class="flex flex-col lg:flex-row justify-between items-center gap-10">
+<div class="max-w-lg text-center lg:text-left">
+<h2 class="text-3xl font-bold mb-4">Ajude-nos a ampliar nosso impacto</h2>
+<p class="text-slate-100 text-lg opacity-90">Inscreva-se para receber atualizações sobre novos cursos e projetos sociais da <span class="text-secondary font-bold">ASS Realizando Sonhos</span>.</p>
+</div>
+<div class="w-full max-w-md flex flex-col gap-4">
+<div class="flex gap-2">
+<input class="flex-1 bg-white/10 border border-white/20 rounded-lg py-3 px-4 focus:ring-2 focus:ring-secondary outline-none placeholder:text-slate-300" placeholder="Seu melhor e-mail"/>
+<button class="bg-secondary text-white font-bold px-6 py-3 rounded-lg hover:bg-secondary/90 transition-all">Assinar</button>
+</div>
+<p class="text-[10px] text-slate-300 text-center lg:text-left uppercase tracking-widest">Respeitamos sua privacidade. Cancele quando quiser.</p>
+</div>
+</div>
+<footer class="mt-20 pt-10 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-6">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary text-2xl">school</span>
+<span class="font-bold">ASS Realizando Sonhos</span>
+</div>
+<div class="flex gap-8 text-sm text-slate-200">
+<a class="hover:text-secondary transition-colors" href="#">Termos de Uso</a>
+<a class="hover:text-secondary transition-colors" href="#">Privacidade</a>
+<a class="hover:text-secondary transition-colors" href="#">Contato</a>
+</div>
+<div class="flex gap-4">
+<button class="size-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-secondary hover:border-secondary transition-all"><span class="material-symbols-outlined text-lg">share</span></button>
+<button class="size-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-secondary hover:border-secondary transition-all"><span class="material-symbols-outlined text-lg">mail</span></button>
+</div>
+</footer>
+</section>
+</div>
+
+<dialog class="w-full max-w-[1100px] p-0 bg-transparent" id="login-modal">
+<div class="relative w-full grid grid-cols-1 lg:grid-cols-2 bg-white dark:bg-[#1e293b] rounded-xl overflow-hidden shadow-2xl">
+<button class="absolute right-4 top-4 text-xs font-bold uppercase tracking-widest text-gray-500 hover:text-secondary transition-colors" id="close-login-modal" type="button">Fechar</button>
+<div class="hidden lg:flex flex-col justify-between p-12 bg-[#175392]/5 relative overflow-hidden">
+<div class="relative z-10">
+<h2 class="text-[#1e293b] dark:text-white text-4xl font-black leading-tight tracking-[-0.033em] mb-6 font-display">
+                        Transformando vidas pela educacao.
+                    </h2>
+<p class="text-[#475569] dark:text-gray-300 text-lg font-normal max-w-md">
+                        Junte-se a mais de 5.000 pessoas que estao mudando o futuro atraves de acoes voluntarias e doacoes transparentes.
+                    </p>
+</div>
+<div class="relative z-10 bg-white/80 dark:bg-[#0f172a]/80 backdrop-blur-md p-6 rounded-xl border border-white/20">
+<div class="flex items-center gap-4 mb-4">
+<span class="material-symbols-outlined text-secondary text-3xl">diversity_3</span>
+<div>
+<p class="text-2xl font-bold text-[#1e293b] dark:text-white">5.000+</p>
+<p class="text-sm text-gray-500 dark:text-gray-400">Membros Ativos</p>
+</div>
+</div>
+<div class="w-full h-2 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden">
+<div class="w-3/4 h-full bg-secondary"></div>
+</div>
+<p class="text-xs mt-3 text-gray-500 dark:text-gray-400">Nossa meta para 2024 e impactar 10.000 estudantes.</p>
+</div>
+<div class="absolute inset-0 z-0">
+<div class="absolute -top-24 -right-24 w-96 h-96 bg-primary/10 rounded-full blur-3xl"></div>
+<div class="absolute -bottom-24 -left-24 w-64 h-64 bg-secondary/10 rounded-full blur-3xl"></div>
+</div>
+</div>
+<div class="flex flex-col p-8 md:p-12">
+<div class="flex border-b border-[#e2e8f0] dark:border-white/10 mb-8">
+<button class="flex-1 flex flex-col items-center justify-center border-b-[3px] border-b-primary text-[#1e293b] dark:text-white pb-[13px] transition-all" type="button">
+<p class="text-sm font-bold tracking-[0.015em]">Cadastro</p>
+</button>
+<button class="flex-1 flex flex-col items-center justify-center border-b-[3px] border-b-transparent text-gray-500 dark:text-gray-400 pb-[13px] hover:text-secondary transition-all" type="button">
+<p class="text-sm font-bold tracking-[0.015em]">Login</p>
+</button>
+</div>
+<div class="space-y-6">
+<div>
+<h3 class="text-[#1e293b] dark:text-white text-2xl font-bold font-display">Crie sua conta</h3>
+<p class="text-sm text-gray-500 dark:text-gray-400 mt-1">Escolha como voce quer impactar hoje.</p>
+</div>
+<div class="flex bg-[#f1f5f9] dark:bg-[#0f172a]/50 p-1 rounded-lg">
+<label class="flex-1 flex flex-col items-center justify-center h-16 rounded-lg cursor-pointer transition-all has-[:checked]:bg-white has-[:checked]:shadow-sm dark:has-[:checked]:bg-primary dark:has-[:checked]:text-white group">
+<input checked="" class="hidden" name="user_type" type="radio" value="voluntario"/>
+<span class="material-symbols-outlined text-xl mb-1 group-hover:scale-110 transition-transform">volunteer_activism</span>
+<span class="text-[10px] uppercase font-bold tracking-wider">Voluntario</span>
+</label>
+<label class="flex-1 flex flex-col items-center justify-center h-16 rounded-lg cursor-pointer transition-all has-[:checked]:bg-white has-[:checked]:shadow-sm dark:has-[:checked]:bg-primary dark:has-[:checked]:text-white group">
+<input class="hidden" name="user_type" type="radio" value="doador"/>
+<span class="material-symbols-outlined text-xl mb-1 group-hover:scale-110 transition-transform">card_giftcard</span>
+<span class="text-[10px] uppercase font-bold tracking-wider">Doador</span>
+</label>
+<label class="flex-1 flex flex-col items-center justify-center h-16 rounded-lg cursor-pointer transition-all has-[:checked]:bg-white has-[:checked]:shadow-sm dark:has-[:checked]:bg-primary dark:has-[:checked]:text-white group">
+<input class="hidden" name="user_type" type="radio" value="aluno"/>
+<span class="material-symbols-outlined text-xl mb-1 group-hover:scale-110 transition-transform">school</span>
+<span class="text-[10px] uppercase font-bold tracking-wider">Aluno</span>
+</label>
+</div>
+<form class="space-y-4">
+<div class="space-y-1">
+<label class="text-sm font-medium text-[#1e293b] dark:text-gray-200">Nome Completo</label>
+<input class="w-full h-12 px-4 rounded-lg border-[#e2e8f0] dark:border-white/10 dark:bg-[#0f172a]/30 dark:text-white focus:ring-secondary focus:border-secondary focus:outline-none" placeholder="Como devemos te chamar?" type="text"/>
+</div>
+<div class="space-y-1">
+<label class="text-sm font-medium text-[#1e293b] dark:text-gray-200">E-mail</label>
+<input class="w-full h-12 px-4 rounded-lg border-[#e2e8f0] dark:border-white/10 dark:bg-[#0f172a]/30 dark:text-white focus:ring-secondary focus:border-secondary focus:outline-none" placeholder="seu@email.com" type="email"/>
+</div>
+<div class="space-y-1">
+<div class="flex justify-between items-center">
+<label class="text-sm font-medium text-[#1e293b] dark:text-gray-200">Senha</label>
+<span class="text-[10px] text-gray-500">Min. 8 caracteres</span>
+</div>
+<div class="relative">
+<input class="w-full h-12 px-4 rounded-lg border-[#e2e8f0] dark:border-white/10 dark:bg-[#0f172a]/30 dark:text-white focus:ring-secondary focus:border-secondary focus:outline-none" placeholder="••••••••" type="password"/>
+<button class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400" type="button">
+<span class="material-symbols-outlined">visibility</span>
+</button>
+</div>
+</div>
+<div class="flex items-start gap-2 py-2">
+<input class="mt-1 rounded border-[#e2e8f0] text-secondary focus:ring-secondary" id="terms" type="checkbox"/>
+<label class="text-xs text-gray-500 dark:text-gray-400 leading-normal" for="terms">
+                                Concordo com os <a class="text-secondary font-bold underline" href="#">Termos de Uso</a> e a <a class="text-secondary font-bold underline" href="#">Politica de Privacidade</a> da ASS Realizando Sonhos.
+                            </label>
+</div>
+<button class="w-full h-12 bg-primary text-white font-bold rounded-lg shadow-lg shadow-primary/20 hover:shadow-primary/40 transition-all flex items-center justify-center gap-2" type="submit">
+                            Criar Minha Conta
+                            <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</form>
+<div class="flex items-center gap-4 py-2">
+<div class="flex-grow h-px bg-[#e2e8f0] dark:bg-white/10"></div>
+<span class="text-xs text-gray-400 uppercase font-bold tracking-widest">ou</span>
+<div class="flex-grow h-px bg-[#e2e8f0] dark:bg-white/10"></div>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<button class="flex items-center justify-center gap-2 h-11 border border-[#e2e8f0] dark:border-white/10 rounded-lg hover:bg-gray-50 dark:hover:bg-white/5 transition-colors" type="button">
+<svg class="size-5" viewBox="0 0 24 24">
+<path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"></path>
+<path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"></path>
+<path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"></path>
+<path d="M12 5.38c1.62 0 3.06.56 4.21 1.66l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"></path>
+</svg>
+<span class="text-sm font-medium dark:text-white">Google</span>
+</button>
+<button class="flex items-center justify-center gap-2 h-11 border border-[#e2e8f0] dark:border-white/10 rounded-lg hover:bg-gray-50 dark:hover:bg-white/5 transition-colors" type="button">
+<svg class="size-5" fill="#1877F2" viewBox="0 0 24 24">
+<path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"></path>
+</svg>
+<span class="text-sm font-medium dark:text-white">Facebook</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</dialog>
+
+<script>
+        const loginModal = document.getElementById("login-modal");
+        const openLoginModal = document.getElementById("open-login-modal");
+        const closeLoginModal = document.getElementById("close-login-modal");
+
+        const openLoginModalMobile = document.getElementById("open-login-modal-mobile");
+        if (openLoginModal && loginModal && typeof loginModal.showModal === "function") {
+            openLoginModal.addEventListener("click", () => loginModal.showModal());
+        }
+        if (openLoginModalMobile && loginModal && typeof loginModal.showModal === "function") {
+            openLoginModalMobile.addEventListener("click", () => loginModal.showModal());
+        }
+
+        if (closeLoginModal && loginModal) {
+            closeLoginModal.addEventListener("click", () => loginModal.close());
+        }
+
+        document.querySelectorAll("[data-mobile-nav-wrapper]").forEach((header) => {
+            const toggle = header.querySelector("[data-mobile-toggle]");
+            if (!toggle) return;
+            toggle.addEventListener("click", () => {
+                header.classList.toggle("nav-open");
+            });
+        });
+
+        const coursesGrid = document.getElementById("courses-grid");
+        const pagination = document.getElementById("courses-pagination");
+        const coursesCount = document.getElementById("courses-count");
+
+        const imageByArea = {
+            AGRICULTURA: "https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=800&q=60",
+            AGROINDUSTRIA: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=800&q=60",
+            AQUICULTURA: "https://images.unsplash.com/photo-1504472478235-9bc48ba4d60f?auto=format&fit=crop&w=800&q=60",
+            "ATIVIDADES DE APOIO AGROSSILVIPASTORIL": "https://images.unsplash.com/photo-1500595046743-cd271d694d30?auto=format&fit=crop&w=800&q=60",
+            "ATIVIDADES RELATIVAS A PRESTACAO DE SERVICOS": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=800&q=60",
+            PECUARIA: "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=800&q=60",
+            SILVICULTURA: "https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=800&q=60",
+            DEFAULT: "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=800&q=60"
+        };
+
+        const normalizeText = (value) =>
+            value
+                .normalize("NFD")
+                .replace(/[\u0300-\u036f]/g, "")
+                .toUpperCase();
+
+        const ensureCardImages = () => {
+            if (!coursesGrid) return [];
+            const cards = Array.from(coursesGrid.querySelectorAll("article"));
+            cards.forEach((card) => {
+                card.classList.add("course-card");
+                if (card.querySelector("img")) return;
+
+                const areaLabel = card.querySelector("span");
+                const normalizedArea = areaLabel ? normalizeText(areaLabel.textContent) : "DEFAULT";
+                if (areaLabel) {
+                    areaLabel.classList.add("course-tag");
+                }
+                const imageUrl = imageByArea[normalizedArea] || imageByArea.DEFAULT;
+
+                const imageWrap = document.createElement("div");
+                imageWrap.className = "h-32 mb-4 rounded-xl overflow-hidden bg-slate-100 dark:bg-slate-700";
+
+                const image = document.createElement("img");
+                image.alt = "Imagem do curso";
+                image.loading = "lazy";
+                image.className = "w-full h-full object-cover";
+                image.src = imageUrl;
+
+                imageWrap.appendChild(image);
+                card.insertBefore(imageWrap, card.firstChild);
+            });
+            return cards;
+        };
+
+        const setupPagination = () => {
+            if (!coursesGrid || !pagination || !coursesCount) return;
+
+            const cards = ensureCardImages();
+            const perPage = 9;
+            const totalPages = Math.ceil(cards.length / perPage);
+
+            const renderPage = (page) => {
+                const startIndex = (page - 1) * perPage;
+                const endIndex = startIndex + perPage;
+
+                cards.forEach((card, index) => {
+                    card.style.display = index >= startIndex && index < endIndex ? "" : "none";
+                });
+
+                const visibleStart = Math.min(startIndex + 1, cards.length);
+                const visibleEnd = Math.min(endIndex, cards.length);
+                coursesCount.textContent = `Mostrando ${visibleStart} a ${visibleEnd} de ${cards.length} cursos`;
+
+                Array.from(pagination.children).forEach((btn) => {
+                    const btnPage = Number(btn.dataset.page);
+                    btn.className = btnPage === page
+                        ? "size-10 flex items-center justify-center rounded-lg bg-secondary text-white font-bold"
+                        : "size-10 flex items-center justify-center rounded-lg border border-slate-200 dark:border-slate-700 hover:border-secondary hover:text-secondary transition-all";
+                });
+            };
+
+            pagination.innerHTML = "";
+            for (let page = 1; page <= totalPages; page += 1) {
+                const button = document.createElement("button");
+                button.type = "button";
+                button.dataset.page = String(page);
+                button.textContent = String(page);
+                button.className = "size-10 flex items-center justify-center rounded-lg border border-slate-200 dark:border-slate-700 hover:border-secondary hover:text-secondary transition-all";
+                button.addEventListener("click", () => renderPage(page));
+                pagination.appendChild(button);
+            }
+
+            renderPage(1);
+        };
+
+        setupPagination();
+    </script>
+
+</body></html>
